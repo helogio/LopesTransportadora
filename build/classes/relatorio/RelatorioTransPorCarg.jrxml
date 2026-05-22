@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioTransPorCarg" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2a094db0-368b-4c49-a083-c39b210fbcf2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BancoDados"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[dHJhbnNwb3J0YWRvcmEuY2FyZ2EgLDI0MywyMSxjODQzYTc0Yi02YjE2LTQ3YmMtOWYzZS0yNjE5
+NThjZThmOTc7dHJhbnNwb3J0YWRvcmEuY29sYWJvcmFkb3IgLDg5LDI3NiwxMDQwZmFlMy1mNWVj
+LTQyY2QtYmVmMS0wODdmYjMwYzUzZTA7dHJhbnNwb3J0YWRvcmEudHJhbnNwb3J0ZSAsMjMsMzYs
+MTU0OWY1N2EtNWYwNi00YTdlLWJlNWMtNzFjZjExMTBlYWMwOw==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="390"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="599"/>
+	<queryString>
+		<![CDATA[SELECT transportadora.colaborador.nome,
+	transportadora.transporte.`idTransporte`,
+	transportadora.transporte.`idColaborador`,
+	transportadora.transporte.`dataCarregou`,
+	transportadora.transporte.`dataDescarregou`,
+	transportadora.carga.origem,
+	transportadora.carga.destino,
+	transportadora.transporte.qtde,
+	transportadora.transporte.`valorFrete`,
+	transportadora.carga.`qtdeTotal`,
+	transportadora.colaborador.nome
+FROM transportadora.transporte
+	INNER JOIN transportadora.carga ON 
+	 transportadora.transporte.`idCarga` = transportadora.carga.`idCarga` 
+	INNER JOIN transportadora.colaborador ON 
+	 transportadora.transporte.`idColaborador` = transportadora.colaborador.`idColaborador`]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="colaborador"/>
+		<fieldDescription><![CDATA[colaborador.nome]]></fieldDescription>
+	</field>
+	<field name="idTransporte" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="idTransporte"/>
+		<property name="com.jaspersoft.studio.field.label" value="idTransporte"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[idTransporte]]></fieldDescription>
+	</field>
+	<field name="idColaborador" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="idColaborador"/>
+		<property name="com.jaspersoft.studio.field.label" value="idColaborador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[colaborador.idColaborador]]></fieldDescription>
+	</field>
+	<field name="dataCarregou" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.name" value="dataCarregou"/>
+		<property name="com.jaspersoft.studio.field.label" value="dataCarregou"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[dataCarregou]]></fieldDescription>
+	</field>
+	<field name="dataDescarregou" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.name" value="dataDescarregou"/>
+		<property name="com.jaspersoft.studio.field.label" value="dataDescarregou"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[dataDescarregu]]></fieldDescription>
+	</field>
+	<field name="origem" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="origem"/>
+		<property name="com.jaspersoft.studio.field.label" value="origem"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="carga"/>
+		<fieldDescription><![CDATA[carga.origem]]></fieldDescription>
+	</field>
+	<field name="destino" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="destino"/>
+		<property name="com.jaspersoft.studio.field.label" value="destino"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="carga"/>
+		<fieldDescription><![CDATA[carga.destino]]></fieldDescription>
+	</field>
+	<field name="qtde" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="qtde"/>
+		<property name="com.jaspersoft.studio.field.label" value="qtde"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[qtde]]></fieldDescription>
+	</field>
+	<field name="valorFrete" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="valorFrete"/>
+		<property name="com.jaspersoft.studio.field.label" value="valorFrete"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[valorFrete]]></fieldDescription>
+	</field>
+	<field name="qtdeTotal" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="qtdeTotal"/>
+		<property name="com.jaspersoft.studio.field.label" value="qtdeTotal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="carga"/>
+		<fieldDescription><![CDATA[carga.qtdeTotal]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="560" height="60" backcolor="#0099FF" uuid="6b657ec6-43bb-48c0-b65c-9d1a4de0c3f0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="380" height="60" forecolor="#FFFFFF" uuid="600c941c-b538-4aba-a5d5-b874f948387d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Lopes Transportadora]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="30" uuid="82b40d5a-0fa8-4e0a-bb75-92be90b37ddf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="17"/>
+				</textElement>
+				<text><![CDATA[Relatório de Transporte Por Carga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="2" width="120" height="30" uuid="6a0d1fbf-cf91-4c5c-bce7-3ac190502487"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Data de emissão]]></text>
+			</staticText>
+			<textField pattern="MMM d, yyyy">
+				<reportElement x="450" y="2" width="105" height="30" uuid="8445f9bb-7d50-4fb4-9d1b-133610aaf3e6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="92" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="555" height="20" backcolor="#F5F5F5" uuid="696339ee-1685-49f2-8248-7e1de16fb858"/>
+			</rectangle>
+			<textField>
+				<reportElement x="50" y="1" width="80" height="20" uuid="22774370-1f0d-44a0-8cd6-ecf7cf25ab83">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="adafb594-d52b-4136-ac59-aadd81fc2b7e"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{origem}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="-1" width="50" height="21" uuid="6b919da1-ec0d-4c84-b402-566809c09de1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="adafb594-d52b-4136-ac59-aadd81fc2b7e"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Origem]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="1" width="91" height="20" uuid="8407e78f-bdd0-4d17-8d29-ef53a399597b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a991573-c137-48d9-a8ce-637c094ca72f"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{destino}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="0" width="50" height="21" uuid="688adf80-acb1-4945-948c-61367cc92c98">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a991573-c137-48d9-a8ce-637c094ca72f"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Destino]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="490" y="0" width="65" height="20" uuid="bc42e298-ee85-4180-b680-e2e8b6939765">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="223bd667-3210-45ae-8775-cc6d2cde124c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qtdeTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="390" y="0" width="100" height="21" uuid="76b84a40-e404-4cd3-b19b-29afe9357650">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="223bd667-3210-45ae-8775-cc6d2cde124c"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qtde Disponivel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="21" width="80" height="19" uuid="ecbf326e-ec05-486c-b078-95fa77535bc3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Colaborador]]></text>
+			</staticText>
+			<textField pattern="MMM d, yyyy">
+				<reportElement x="130" y="42" width="100" height="20" uuid="1ecc3b64-f95e-4930-bb30-78e3ed2e866f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dataCarregou}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="130" y="22" width="100" height="20" uuid="4285a919-9b74-45c1-8fdf-caae592afe2a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Carregou]]></text>
+			</staticText>
+			<textField pattern="MMM d, yyyy">
+				<reportElement x="260" y="40" width="110" height="20" uuid="169fa192-6f23-4ebe-b5e8-07425f6c56ca"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dataDescarregou}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="20" width="110" height="20" uuid="659b5ebe-70eb-46bf-989c-64f829e4e4c1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Descarregou]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="40" width="80" height="20" uuid="6986fe96-6950-4a28-bda9-bdd45a4547d9"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qtde}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="400" y="20" width="80" height="20" uuid="8eea3acd-ea61-4d3c-a86e-909c01222e8e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qtde Levada]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="490" y="40" width="55" height="20" uuid="1f059e97-d53a-4b80-92c0-bc8f8657389d"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{valorFrete}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="490" y="20" width="55" height="19" uuid="2ba0a97b-da15-4a10-bc4e-5f668ef4a44b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="40" width="80" height="22" uuid="ea343d02-79e5-454d-abcc-91eacae001cc"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-68" y="60" width="100" height="30" uuid="24a40549-2819-4e58-9ee5-4ba57de1dfc5"/>
+				<text><![CDATA[nome]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="32" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="150" height="27" uuid="528d9a30-d82e-49ff-9dea-eb959ce018c1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transportes Realizados]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="1" width="100" height="27" uuid="36be2260-50aa-40c3-b67e-1a7398dad5be"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{idTransporte1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="31" width="110" height="28" uuid="8b40bfc9-9aad-4815-952a-26e654d45a52"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cargas Realizadas]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="490" y="31" width="65" height="30" uuid="db7c13f6-c5f1-4b0d-ba01-ac7539f665d5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{idCarga1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="29" width="170" height="30" uuid="25ff0d79-ca31-48f3-b55b-05eb552c7e09"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Total dos Transportes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="29" width="80" height="30" uuid="64ee5ff7-cf5e-412a-a3f9-a8d6bec76347"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{valorFrete1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

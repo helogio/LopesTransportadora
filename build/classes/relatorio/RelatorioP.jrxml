@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioP" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bfebbac5-754b-4570-9c5a-990893665998">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BancoDados"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[dHJhbnNwb3J0YWRvcmEucHJvZHV0byBBUyAsMTE4LDg4LDMyYTZlMjJkLTM3YTQtNDc1NC1iYWJj
+LTQ0ZjBjNmNkMmVkNjs=]]>
+	</property>
+	<queryString>
+		<![CDATA[SELECT tipo
+FROM transportadora.produto]]>
+	</queryString>
+	<field name="tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+		<fieldDescription><![CDATA[tipo]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="560" height="60" backcolor="#0099FF" uuid="4ff90096-6bcc-44d9-a8da-fd96e34f3ead"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="380" height="60" forecolor="#FFFFFF" uuid="4b21792f-df52-479f-aa2c-062bfececb8e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Lopes Transportadora]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="380" height="30" forecolor="#FFFFFF" uuid="383eac02-2897-4290-9af2-af516213b65b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Lopes Transportadora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="30" uuid="d3c6cd39-1db3-48ed-b72b-0020c002418c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="17"/>
+				</textElement>
+				<text><![CDATA[Relatório de Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="120" height="30" uuid="e9ad84bc-cecb-4e05-b5bd-d4d0d459f5d9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Data de emissão]]></text>
+			</staticText>
+			<textField pattern="MMMM d, yyyy">
+				<reportElement x="421" y="0" width="134" height="30" uuid="a7d5eecb-87d4-44cd-a669-9a0f7cc60de8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="20" backcolor="#EBEBEB" uuid="f242c58d-0f57-4b2c-ab81-3aae5ff3e76e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="20" uuid="500525c9-b7e2-431b-8629-6cc7df4fb6c6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="36020296-125a-4c65-8228-ee96931c1959"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Produto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="-1" width="100" height="21" uuid="d1a9e7e7-85fd-45c9-ab4a-5f7ba0044f69">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="36020296-125a-4c65-8228-ee96931c1959"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NotaFiscal_Transporte" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="50f1c46c-20fc-4497-a090-f5fffcdaedca">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BancoDados"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[dHJhbnNwb3J0YWRvcmEucGFnYW1lbnRvdHJhbnNwb3J0ZSBBUyAsMjY0LDU4LDI1YmY2NzIxLTQw
+OGQtNDM0My1hNDcwLWU0MzQwZWU4MzNmNzt0cmFuc3BvcnRhZG9yYS50cmFuc3BvcnRlIEFTICw5
+OCw0OCwwYWU4ZjM4ZC1lNzBiLTQxYzYtYmJiYy1hZjY5ZmRjYzU0ZGM7]]>
+	</property>
+	<subDataset name="Dataset1" uuid="0d4b82cd-4477-4f76-b80e-342e0cc8da49">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BancoDados"/>
+		<property name="com.jaspersoft.studio.data.sql.tables">
+			<![CDATA[dHJhbnNwb3J0YWRvcmEucGFnYW1lbnRvdHJhbnNwb3J0ZSBBUyAsMzE1LDEwMSxkNWVmZmI1Zi1h
+OTgzLTRkOGUtOTFmMy0xYTExYTg2ZGIxMWY7]]>
+		</property>
+		<queryString>
+			<![CDATA[SELECT `valorParcela`,
+	`dataVencimento`,
+	`dataPagamento`,
+	`idPagamentoTransporte`
+FROM transportadora.pagamentotransporte]]>
+		</queryString>
+		<field name="valorParcela" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="valorParcela"/>
+			<property name="com.jaspersoft.studio.field.label" value="valorParcela"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pagamentotransporte"/>
+			<fieldDescription><![CDATA[valorParcela]]></fieldDescription>
+		</field>
+		<field name="dataVencimento" class="java.util.Date">
+			<property name="com.jaspersoft.studio.field.name" value="dataVencimento"/>
+			<property name="com.jaspersoft.studio.field.label" value="dataVencimento"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pagamentotransporte"/>
+			<fieldDescription><![CDATA[dataVencimento]]></fieldDescription>
+		</field>
+		<field name="dataPagamento" class="java.util.Date">
+			<property name="com.jaspersoft.studio.field.name" value="dataPagamento"/>
+			<property name="com.jaspersoft.studio.field.label" value="dataPagamento"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pagamentotransporte"/>
+			<fieldDescription><![CDATA[dataPagamento]]></fieldDescription>
+		</field>
+		<field name="idPagamentoTransporte" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="idPagamentoTransporte"/>
+			<property name="com.jaspersoft.studio.field.label" value="idPagamentoTransporte"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pagamentotransporte"/>
+			<fieldDescription><![CDATA[idPagamentoTransporte]]></fieldDescription>
+		</field>
+		<variable name="valorParcela1" class="java.lang.Double" resetType="Column" calculation="Sum">
+			<variableExpression><![CDATA[$F{valorParcela}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT transportadora.transporte.`dataCarregou`,
+	transportadora.transporte.`dataDescarregou`,
+	transportadora.transporte.qtde,
+	transportadora.transporte.`valorFrete`,
+	transportadora.pagamentotransporte.`valorParcela`,
+	transportadora.pagamentotransporte.`dataPagamento`
+FROM transportadora.pagamentotransporte
+	INNER JOIN transportadora.transporte ON 
+	 transportadora.pagamentotransporte.`idTransporte` = transportadora.transporte.`idTransporte`]]>
+	</queryString>
+	<field name="dataCarregou" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.name" value="dataCarregou"/>
+		<property name="com.jaspersoft.studio.field.label" value="dataCarregou"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[dataCarregou]]></fieldDescription>
+	</field>
+	<field name="dataDescarregou" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.name" value="dataDescarregou"/>
+		<property name="com.jaspersoft.studio.field.label" value="dataDescarregou"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[dataDescarregou]]></fieldDescription>
+	</field>
+	<field name="qtde" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="qtde"/>
+		<property name="com.jaspersoft.studio.field.label" value="qtde"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[qtde]]></fieldDescription>
+	</field>
+	<field name="valorFrete" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="valorFrete"/>
+		<property name="com.jaspersoft.studio.field.label" value="valorFrete"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transporte"/>
+		<fieldDescription><![CDATA[valorFrete]]></fieldDescription>
+	</field>
+	<field name="pagamento" class="java.util.List">
+		<fieldDescription><![CDATA[pagamento]]></fieldDescription>
+	</field>
+	<variable name="valorFrete1" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{valorFrete}]]></variableExpression>
+	</variable>
+	<variable name="valorFrete2" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{valorFrete}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="157" height="15" uuid="3132e9e5-6b6b-4688-a948-a26545ddbb53"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transportes realizados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="90" height="20" uuid="fb6e595b-54b7-4ce9-999a-633b4930ac96">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9d76236-9e72-4cbb-b0fb-5b072034a46e"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Embarque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="20" width="100" height="20" uuid="5aee226a-73ca-48e8-97d2-2a102df2a192">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="10a10062-4407-4c30-9d37-3f897b9cdfb9"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Desembarque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="20" width="90" height="20" uuid="5b6deb73-4110-410c-b8a2-4e5fbbd9594b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="36c4d9f2-fd6e-4c70-9ab6-d83b5caa6566"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qtde transportada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="20" width="80" height="20" uuid="05cf3aac-fd5c-4cad-9e16-73425bcc0aa4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70ca3ca6-6454-4af4-a064-b3864e32a2a4"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Transporte]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="90" height="20" uuid="71fd5313-8fe7-40b8-882b-9f1169089184">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9d76236-9e72-4cbb-b0fb-5b072034a46e"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dataCarregou}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="90" y="0" width="100" height="20" uuid="c27408a0-9128-4d79-961e-12f8122dd812">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="10a10062-4407-4c30-9d37-3f897b9cdfb9"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dataDescarregou}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="60" height="20" uuid="482b1ceb-255c-43a1-a5b1-9635d8fc0555">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="36c4d9f2-fd6e-4c70-9ab6-d83b5caa6566"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qtde}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="1" width="80" height="20" uuid="f667a823-7812-40f0-ab83-0c6dd23c37ee">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70ca3ca6-6454-4af4-a064-b3864e32a2a4"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{valorFrete}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="340" y="0" width="110" height="20" uuid="dc202d3f-b59a-4760-a200-f483cf6fddb7"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total dos Transportes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="2" width="100" height="18" uuid="54960047-b773-4a81-a496-4ca76ca00bf4"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{valorFrete2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>
